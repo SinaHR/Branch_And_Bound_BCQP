@@ -1,0 +1,68 @@
+# ======================================
+# Python
+# ======================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.so
+
+# Virtual environments
+venv/
+.env/
+.venv/
+env/
+ENV/
+
+# Jupyter notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# ======================================
+# OS & IDE files
+# ======================================
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+.history/
+
+# PyCharm / JetBrains
+.idea/
+
+# ======================================
+# Logs & Outputs
+# ======================================
+*.log
+*.out
+*.err
+
+# ======================================
+# Dependencies / Builds
+# ======================================
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ======================================
+# Misc
+# ======================================
+# Temporary files
+*.tmp
+*.swp
+*.bak
+
+# Coverage / test reports
+.coverage
+htmlcov/
+.cache/
+pytest_cache/
+
