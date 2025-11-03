@@ -17,14 +17,12 @@ It provides:
 
 The solver handles QCQPs of the form:
 
-\begin{aligned}
-\min_x \quad & f(x) = x^\top H x + c^\top x \
-\text{s.t.} \quad & g_k(x) = x^\top Q_k x + A_k x - b_k = 0, \quad k = 1,\dots,m, \
-& lb \le x \le ub
-\end{aligned}
+minimize     f(x) = xᵀ H x + cᵀ x
+subject to   gₖ(x) = xᵀ Qₖ x + Aₖ x - bₖ = 0,   for k = 1,…,m
+             lb ≤ x ≤ ub
 
 
-Each (Q_k) must be **symmetric with zero diagonal**, meaning the constraints contain **only bilinear terms** ((x_i x_j, i \neq j)).
+Each (Q_k) must be **symmetric with zero diagonal**, meaning the constraints contain **only bilinear terms** ((x_i x_j, i ≠ j)).
 All variable bounds must be **finite** to construct McCormick envelopes.
 
 ---
