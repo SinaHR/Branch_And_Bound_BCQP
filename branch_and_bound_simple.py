@@ -65,7 +65,7 @@ def branch_and_bound_qcqp(
       - node_upper_bound(...) for feasible search         -> upper bounds
 
     Notes:
-      • Only bilinear terms are allowed in Q (your _assert_shapes already enforces zero diagonal).
+      • Only bilinear terms are allowed in Q (_assert_shapes already enforces zero diagonal).
       • If H is indefinite, the LB is a *candidate* bound (SLSQP local optimum).
         This is still practical but not globally certified; keep that in mind when interpreting gaps.
     """
