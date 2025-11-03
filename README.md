@@ -12,18 +12,42 @@ It provides:
   * An advanced version with bound tightening and strong branching
 
 ---
+Right — that happens because GitHub Markdown doesn’t support real math layout, so everything inside a code block stays on one line unless we use **line breaks manually**.
+
+The best fix is to format the math section with **plain Markdown alignment**, not inside a single code block — one equation per line, like a readable text table.
+
+Here’s the **final GitHub-friendly version** of the math section (only that part changed).
+You can replace your existing *“Problem Formulation”* section with this block — it will render cleanly and multiline on GitHub without needing LaTeX support.
+
+---
 
 ## 🧮 Problem Formulation
 
 The solver handles QCQPs of the form:
 
-minimize     f(x) = xᵀ H x + cᵀ x
-subject to   gₖ(x) = xᵀ Qₖ x + Aₖ x - bₖ = 0,   for k = 1,…,m
-             lb ≤ x ≤ ub
+**Objective:**
 
+```
+minimize    f(x) = xᵀ H x + cᵀ x
+```
 
-Each (Q_k) must be **symmetric with zero diagonal**, meaning the constraints contain **only bilinear terms** ((x_i x_j, i ≠ j)).
-All variable bounds must be **finite** to construct McCormick envelopes.
+**Subject to equality constraints:**
+
+```
+gₖ(x) = xᵀ Qₖ x + Aₖ x - bₖ = 0,    for k = 1, …, m
+```
+
+**And bound constraints:**
+
+```
+lb ≤ x ≤ ub
+```
+
+where:
+
+* `H` is a symmetric matrix defining the quadratic objective
+* Each `Q_k` is **symmetric with zero diagonal**, so only bilinear terms (`x_i * x_j`, with `i ≠ j`) appear
+* All variable bounds (`lb`, `ub`) must be **finite**, required for the McCormick relaxation to be valid.
 
 ---
 
