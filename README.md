@@ -1,6 +1,6 @@
-# QCQP Node Bounds and Branch & Bound Solver
+# BCQP Node Bounds and Branch & Bound Solver
 
-This project implements a **Branch & Bound global optimization framework** for **Quadratically Constrained Quadratic Programs (QCQPs)** that contain **bilinear (nonconvex)** equality constraints.
+This project implements a **Branch & Bound global optimization framework** for **Bilinearly Constrained Quadratic Programs (BCQPs)** that contain **bilinear (nonconvex)** equality constraints.
 
 It provides:
 
@@ -15,7 +15,7 @@ It provides:
 
 ## 🧮 Problem Formulation
 
-The solver handles QCQPs of the form:
+The solver handles BCQPs of the form:
 
 **Objective:**
 
@@ -47,7 +47,7 @@ where:
 
 ### 1. `node_lower_bound(...)`
 
-Computes a **convex relaxation** of the QCQP using **McCormick envelopes** to replace bilinear terms.
+Computes a **convex relaxation** of theBCQP using **McCormick envelopes** to replace bilinear terms.
 Returns a provable lower bound (LB) on the global optimum.
 
 **Features**
@@ -62,7 +62,7 @@ Returns a provable lower bound (LB) on the global optimum.
 
 ### 2. `node_upper_bound(...)`
 
-Solves the **original nonconvex QCQP** using local optimization and multiple random restarts to find feasible points and upper bounds (UBs).
+Solves the **original nonconvex BCQP** using local optimization and multiple random restarts to find feasible points and upper bounds (UBs).
 
 **Features**
 
@@ -260,7 +260,7 @@ pip install -r requirements.txt
 | Component                   | Role                   | Type             | Solver            |
 | --------------------------- | ---------------------- | ---------------- | ----------------- |
 | `node_lower_bound`          | Convex relaxation      | Lower bound      | SLSQP             |
-| `node_upper_bound`          | Original QCQP          | Upper bound      | Multi-start SLSQP |
+| `node_upper_bound`          | Original BCQP          | Upper bound      | Multi-start SLSQP |
 | `branch_and_bound_simple`   | Basic global search    | B&B              | Simple            |
 | `branch_and_bound_advanced` | Enhanced global search | B&B + Tightening | Advanced          |
 
