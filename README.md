@@ -13,7 +13,7 @@ It provides:
 
 ---
 
-## 🧮 Problem Formulation
+## Problem Formulation
 
 The solver handles BCQPs of the form:
 
@@ -43,7 +43,7 @@ where:
 
 ---
 
-## 📦 Components
+## Components
 
 ### 1. `node_lower_bound(...)`
 
@@ -116,7 +116,7 @@ Output: `BnBResult` with timing and node statistics.
 
 ---
 
-## ⚙️ Input Format (JSON)
+## Input Format (JSON)
 
 Each problem is defined in a `.json` file:
 
@@ -145,7 +145,7 @@ Notes:
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Run via CLI
 
@@ -163,11 +163,11 @@ python mccormick_relaxation.py --config INPUT.json --pipeline
 
 ---
 
-## 🧭 Command-Line Options
+## Command-Line Options
 
 Each main script supports `--help` to display available arguments.
 
-### ▶ `branch_and_bound_advanced.py`
+### `branch_and_bound_advanced.py`
 
 ```
 usage: branch_and_bound_advanced.py --config INPUT.json [--time TIME_LIMIT]
@@ -177,7 +177,7 @@ options:
   --time TIME_LIMIT       Optional time limit in seconds for the Branch & Bound search.
 ```
 
-### ▶ `mccormick_relaxation.py`
+### `mccormick_relaxation.py`
 
 ```
 usage: mccormick_relaxation.py --config INPUT.json [--pipeline | --lb-only | --ub-only] [options]
@@ -203,7 +203,7 @@ upper-bound options:
 
 ---
 
-## 📊 Output Interpretation
+## Output Interpretation
 
 | Term                 | Description                                      |
 | -------------------- | ------------------------------------------------ |
@@ -219,7 +219,7 @@ upper-bound options:
 
 ---
 
-## 🧠 Algorithmic Notes
+## Algorithmic Notes
 
 * **Convexity Detection:**
   The LB routine checks if (H) is positive semidefinite.
@@ -237,7 +237,7 @@ upper-bound options:
 
 ---
 
-## 🧪 Example Test Files
+## Example Test Files
 
 | File        | Description                                |
 | ----------- | ------------------------------------------ |
@@ -245,7 +245,7 @@ upper-bound options:
 
 ---
 
-## 🧩 Dependencies
+## Dependencies
 
 Install all requirements:
 
@@ -255,7 +255,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🧭 Summary Table
+## Summary Table
 
 | Component                   | Role                   | Type             | Solver            |
 | --------------------------- | ---------------------- | ---------------- | ----------------- |
@@ -266,7 +266,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📈 Visual Summary
+## Visual Summary
 
 ```
  ┌────────────────────────┐
@@ -287,10 +287,3 @@ pip install -r requirements.txt
               │
      Stop when gap small
 ```
-
----
-
-✅ **Goal:** Find a *feasible global optimum* for nonconvex bilinear QCQPs
-and prove optimality via **Branch & Bound with McCormick relaxations**.
-
----
